@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Mr. Cheese\'s Personal Movie App</string>
+    <string name="movie_poster_content_desc">Poster for the movie</string>
+    <string name="detail_synopsis">Captain Kirk is the White Whale and Khan is Captain Ahab, but with spaceships</string>
+    <string name="detail_title">Star Trek II: The Wrath of Khan</string>
+    <string name="detail_rating">5/7 THE BEST</string>
+    <string name="detail_release">1982</string>
+    <string name="action_prefs">Prefs</string>
+    <string name="cheese_off">App not replaced with picture of Mr. Cheese wearing a bowtie</string>
+    <string name="cheese_on">App replaced with picture of Mr. Cheese wearing a bowtie</string>
+    <string name="replace_with_cheese">Replace movie app?</string>
+    <string name="show_mr_cheese" translatable="false">show_mr_cheese</string>
+
+    <string name="method_top_val" translatable="false">method_top</string>
+    <string name="method_popular_val" translatable="false">method_pop</string>
+
+    <string name="method_top_key">Top Movies</string>
+    <string name="method_popular_key">Popular Movies</string>
+    <string name="sort_method_key" translatable="false">sort_method</string>
+    <string name="sort_method_title">Sort Method</string>
+
+    <array name="sort_method_keys">
+        <item>@string/method_top_key</item>
+        <item>@string/method_popular_key</item>
+    </array>
+    <array name="sort_method_values">
+        <item>@string/method_top_val</item>
+        <item>@string/method_popular_val</item>
+    </array>
 </resources>

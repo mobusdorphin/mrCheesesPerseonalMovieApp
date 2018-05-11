@@ -19,7 +19,8 @@ public class TMDBConnector {
 
     public enum SortMethod {
         SORT_TOP ("top_rated"),
-        SORT_POPULAR ("popular");
+        SORT_POPULAR ("popular"),
+        SPECIFIC_MOVIE ("id");
 
         private final String method;
         SortMethod(String method) {
@@ -31,7 +32,7 @@ public class TMDBConnector {
         }
     }
 
-    public static String getMovieJSON(SortMethod sortMethod) throws IOException {
+    public static String getMovieJSON(SortMethod sortMethod) {
         Uri uri = Uri.parse(BASE_URL).buildUpon()
                 .appendPath(PATH_MOVIE)
                 .appendPath(sortMethod.getMethod())
@@ -44,6 +45,15 @@ public class TMDBConnector {
             e.printStackTrace();
             return null;
         }
+        try {
+            return retrieveJsonFromAPI(movieUrl);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private static String retrieveJsonFromAPI(URL movieUrl) throws IOException {
 
         // Pulled from Sunshine NetworkUtils
         HttpURLConnection connection = (HttpURLConnection) movieUrl.openConnection();

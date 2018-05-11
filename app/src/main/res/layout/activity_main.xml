@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorBackground"
         tools:context="com.clan707.mobusdorphin.mrcheesespersonalmovieapp.MainActivity">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_main_activity"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:scrollbars="none"/>
+            android:scrollbars="none"
+            android:background="@color/colorBackground"/>
+
+        <ImageView
+            android:id="@+id/iv_mr_cheese"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/cheese_bowtie"
+            android:visibility="gone"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

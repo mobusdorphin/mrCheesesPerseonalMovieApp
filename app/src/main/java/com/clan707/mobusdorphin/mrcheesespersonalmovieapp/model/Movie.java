@@ -1,10 +1,9 @@
 package com.clan707.mobusdorphin.mrcheesespersonalmovieapp.model;
 
-/**
- * Created by mobus on 5/2/18.
- */
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Movie {
+public class Movie implements Parcelable {
     private int id;
     private String title;
     private String posterUrl;
@@ -22,6 +21,20 @@ public class Movie {
         this.date = date;
     }
 
+    public Movie(Parcel p) {
+        String[] movieData = new String[6];
+        p.readStringArray(movieData);
+
+        this.id = Integer.parseInt(movieData[0]);
+        this.title = movieData[1];
+        this.posterUrl = movieData[2];
+        this.rating = movieData[3];
+        this.overview = movieData[4];
+        this.date = movieData[5];
+    }
+
+
+
     public void setId(int id) {this.id = id;}
     public void setTitle(String title) {this.title = title;}
     public void setPosterUrl(String posterUrl) {this.posterUrl = POSTER_URL_PREFIX + posterUrl;}
@@ -35,4 +48,31 @@ public class Movie {
     public String getRating() {return this.rating;}
     public String getOverview() {return this.overview;}
     public String getDate() {return this.date;}
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[]{this.id + "",
+                this.title,
+                this.posterUrl,
+                this.rating,
+                this.overview,
+                this.date} );
+    }
 }

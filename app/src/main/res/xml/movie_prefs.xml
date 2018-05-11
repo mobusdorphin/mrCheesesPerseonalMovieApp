@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:defaultValue="@string/method_popular_val"
+        android:key="@string/sort_method_key"
+        android:entries="@array/sort_method_keys"
+        android:entryValues="@array/sort_method_values"
+        android:title="@string/sort_method_title"/>
+    <CheckBoxPreference
+        android:defaultValue="@bool/show_cheese_def_value"
+        android:key="@string/show_mr_cheese"
+        android:summaryOff="@string/cheese_off"
+        android:summaryOn="@string/cheese_on"
+        android:title="@string/replace_with_cheese"/>
+</PreferenceScreen>
