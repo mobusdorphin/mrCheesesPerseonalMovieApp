@@ -10,7 +10,7 @@ public class Movie implements Parcelable {
     private String rating;
     private String overview;
     private String date;
-    private static final String POSTER_URL_PREFIX = "http://image.tmdb.org/t/p/w185/";
+    private static final String POSTER_URL_PREFIX = "http://image.tmdb.org/t/p/w500/";
 
     public Movie(int id, String title, String posterUrl, String rating, String overview, String date) {
         this.id = id;

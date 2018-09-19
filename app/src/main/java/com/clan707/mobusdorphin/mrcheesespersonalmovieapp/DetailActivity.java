@@ -20,14 +20,14 @@ public class DetailActivity extends AppCompatActivity {
 //        However, I don't usually see this being done in general. Something I don't know?
         Movie movie = getIntent().getExtras().getParcelable(MovieAdapter.INTENT_MOVIE_ID);
 
-        // convert rating to the Brandon Sullivan scale
+        // convert rating to the Brendon Sullivan scale
         double sullivanRating = Double.parseDouble(movie.getRating());
         sullivanRating = sullivanRating / 2;
         String sullivanText = sullivanRating + "/7";
 
         if (movie.getId() == 550) {
             sullivanText = "5/7";
-            // Because Brandon Sullivan, the man himself, rates Fight Club a perfect 5/7
+            // Because Brendon Sullivan, the man himself, rates Fight Club a perfect 5/7
         }
         Picasso.with(this).load(movie.getPosterUrl()).into(binding.ivDetailMoviePoster);
         binding.tvDetailMovieTitle.setText(movie.getTitle());
